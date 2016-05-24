@@ -240,6 +240,8 @@ class ProxyAction extends Action implements IEventEmitter {
 	public set checked(value: boolean) {
 		this.delegate.checked = value;
 	}
+	
+
 
 	public run(event?: any): TPromise<any> {
 		this.runHandler(event);
@@ -271,6 +273,7 @@ export interface IRunEvent {
 	action: IAction;
 	result?: any;
 	error?: any;
+	systemerror? : any;
 }
 
 export class ActionRunner extends EventEmitter implements IActionRunner {
